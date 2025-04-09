@@ -27,14 +27,17 @@ def sacar(valor):
 
 
 def extrato():
+    print("-=" *20)
     for depositos in depositos_realizados:
         if depositos > 0:
-            print(f"Deposito realidado no valor de: {depositos}\n")
+            print(f"Deposito: R$ {depositos}")
         else:
             print(
-                f"Saque realizado no valor de {depositos}\n".replace('-', ''))
-
+                f"Saque: R$ {depositos}".replace('-', ''))
+    print()
+    print()
     print(f"Saldo Atual: R$ {saldo:.2f}")
+    print("-=" *20)
 
 
 def menu():
@@ -62,8 +65,11 @@ while True:
 
                 if valor >= saldo:
                     print("A Operação falhou! Voce não tem saldo o suficiente")
+                elif valor < 0:
+                    print("A Operação falhou! O valor informado e invalido.")
+                    
 
-                if valor <= 500:
+                elif valor <= 500:
                     sacar(valor=valor)
 
                 else:
