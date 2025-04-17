@@ -1,43 +1,57 @@
+from datetime import datetime
+
 saldo = 0
 saque_max = 3
-depositos_realizados = list()
-
+transacao_diaria = 10
+transacao_realizados = ''
 
 def depositar(valor):
+    global transacao_realizados
     global saldo
-    if valor > 0:
-        saldo += valor
-        print("Deposito realizado com sucesso!")
-        depositos_realizados.append(valor)
-
+    global transacao_diaria
+    if transacao_diaria > 0:
+        if valor > 0:
+            saldo += valor
+            hora = datetime.now().strftime("%H:%M:%S")
+            data = datetime.now().strftime("%d/%m/%Y")
+            print("Deposito realizado com sucesso!")
+            transacao_diaria -= 1
+            print(f"Voce ainda pode fazer {transacao_diaria} transações hoje")
+            transacao_realizados += f"Data: {data} Horario: {hora}: Deposito: {valor:.2f}\n"
+        else:
+            print("Deposito não realizado")
     else:
-        print("Deposito não realizado")
+        print("Seu limite de transação diaria acabou, aguarde o proximo dia")
 
 
 def sacar(valor):
+    global transacao_realizados
+    global transacao_diaria
     global saldo
     global saque_max
-    if saldo >= valor:
-        saldo -= valor
-        print("Saque realizado com sucesso!")
-        depositos_realizados.append(-valor)
-        saque_max -= 1
+    if transacao_diaria > 0:
+        if saldo >= valor:
+            saldo -= valor
+            hora = datetime.now().strftime("%H:%M:%S")
+            data = datetime.now().strftime("%d/%m/%Y")
+            print("Saque realizado com sucesso!")
+            transacao_diaria -= 1
+            print(f"Voce ainda pode fazer {transacao_diaria} transações hoje")
+            transacao_realizados += f"Data: {data} Horario: {hora}: Saque: {valor:.2f}\n"
+            saque_max -= 1
+        else:
+            print("Saque nao realizado")
     else:
-        print("Saque nao realizado")
+        print("Seu limite de transação diaria acabou, aguarde o proximo dia")
 
 
 def extrato():
-    print("-=" *20)
-    for depositos in depositos_realizados:
-        if depositos > 0:
-            print(f"Deposito: R$ {depositos}")
-        else:
-            print(
-                f"Saque: R$ {depositos}".replace('-', ''))
+    print("-=" * 20)
+    print(transacao_realizados)
     print()
     print()
     print(f"Saldo Atual: R$ {saldo:.2f}")
-    print("-=" *20)
+    print("-=" * 20)
 
 
 def menu():
@@ -67,7 +81,6 @@ while True:
                     print("A Operação falhou! Voce não tem saldo o suficiente")
                 elif valor < 0:
                     print("A Operação falhou! O valor informado e invalido.")
-                    
 
                 elif valor <= 500:
                     sacar(valor=valor)
