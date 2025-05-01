@@ -65,7 +65,7 @@ python sistema_bancario.py
 
 ## 👨‍💻 Autor
 
-**Renan**  
+**Renan Cristian**  
 Estudante de Análise e Desenvolvimento de Sistemas (3º semestre)  
 Curso: Introdução à Programação - Recode / Imersão Front-End - Alura / Python - Dio.me 
 GitHub: [github.com/Renanito69](https://github.com/Renanito69)
