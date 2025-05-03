@@ -1,75 +1,59 @@
+# 💰 Sistema Bancário com Python
 
-# 🏦 Sistema Bancário em Python (Procedural)
+Este projeto é um sistema bancário simples desenvolvido em Python, com foco no aprendizado de programação e boas práticas. Ele simula funcionalidades básicas de um banco, como criação de contas, saques, depósitos e geração de extratos.
 
-Este é um projeto simples de **Sistema Bancário** desenvolvido em **Python**, utilizando uma abordagem **procedural**, com foco em aprendizado de programação, boas práticas, controle de fluxo e estrutura de dados.
+## 📌 Funcionalidades
 
-## 💻 Funcionalidades
-
-O sistema permite:
-
-- ✅ Criar usuários com dados pessoais e endereço
-- ✅ Criar contas bancárias associadas a usuários existentes
-- ✅ Realizar depósitos
-- ✅ Realizar saques com limites diários
-- ✅ Consultar extrato de transações
-- ✅ Sistema de limite de transações por dia
+✅ Cadastro de clientes  
+✅ Criação de contas correntes  
+✅ Depósitos e saques com validação  
+✅ Geração de extrato bancário  
+✅ Menu interativo no terminal  
+✅ Estrutura com orientação a objetos (POO)  
+✅ Versão procedural também disponível
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Linguagem: [Python 3.x](https://www.python.org/)
-- Módulos: `datetime` (nativo)
+- Python 3.x
+- Programação Orientada a Objetos (POO)
+- Estrutura procedural (em versões anteriores)
 
-## 📂 Estrutura do Código
+## 🚀 Como Executar o Projeto
 
-- `usuario`: lista que armazena todos os usuários
-- `cliente`, `endereco`: dicionários temporários para cadastro
-- `conta_corrente`: lista com todas as contas bancárias criadas
-- `depositar(valor, saldo, extrato)`: função para depósito
-- `sacar(saldo, valor, extrato, numero_saques, limite_saques)`: função para saque
-- `extrato(saldo, extrato_atual)`: exibe extrato da conta
-- `criar_usuario()`: coleta e armazena dados de um novo usuário
-- `criar_conta_corrente()`: vincula uma conta a um CPF válido
-- `menu()`: exibe opções do sistema
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Renanito69/Sistema-Bancario-com-python.git
+   cd Sistema-Bancario-com-python
+   ```
 
-## 🧪 Como Usar
+2. Execute o script principal:
+   ```bash
+   python sistema_bancario.py
+   ```
 
-1. Clone este repositório:
+> Certifique-se de ter o Python instalado em sua máquina. Para instalar, acesse: [python.org](https://www.python.org/)
 
-```bash
-git clone https://github.com/Renanito69/Sistema-Bancario-com-python.git
-```
-
-2. Navegue até a pasta do projeto e execute o arquivo Python:
+## 📁 Estrutura do Projeto
 
 ```bash
-cd Sistema-Bancario-com-python
-python sistema_bancario.py
+Sistema-Bancario-com-python/
+│
+├── procedural/                # Versão com estrutura procedural
+│   └── sistema_procedural.py
+│
+├── poo/                      # Versão com orientação a objetos
+│   └── sistema_poo.py
+│
+├── README.md                 # Este arquivo
+└── LICENSE                   # Licença do projeto (se aplicável)
 ```
-
-3. Siga o menu no terminal para interagir com o sistema.
-
-## 📌 Regras de Negócio
-
-- Cada usuário pode ter **uma ou mais contas correntes**
-- Cada CPF deve ser **único**
-- Limite de **3 saques diários**, com valor máximo de R$500 por saque
-- Limite de **10 transações** (depósitos ou saques) por dia
-- O extrato é exibido com data e hora de cada operação
-
-## 🚀 Melhorias Futuras
-
-- 💳 Integração com interface gráfica (Tkinter ou PyQt)
-- 🔐 Implementar autenticação com senha
-- 🧾 Armazenamento de dados em arquivos ou banco de dados
-- 🧱 Versão com Programação Orientada a Objetos
 
 ## 👨‍💻 Autor
 
-**Renan Cristian**  
-Estudante de Análise e Desenvolvimento de Sistemas (3º semestre)  
-Curso: Introdução à Programação - Recode / Imersão Front-End - Alura / Python - Dio.me 
-GitHub: [github.com/Renanito69](https://github.com/Renanito69)
+Desenvolvido por **Renan Cristian**  
+📚 Estudante de Análise e Desenvolvimento de Sistemas  
+🔗 [LinkedIn](www.linkedin.com/in/renan-cristian-moraes-de-oliveira-89761330a)
 
----
+## 📄 Licença
 
-📬 Para dúvidas ou sugestões, fique à vontade para abrir uma *issue* ou contribuir com o projeto!
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
