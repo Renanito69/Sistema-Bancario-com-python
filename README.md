@@ -52,7 +52,7 @@ Sistema-Bancario-com-python/
 
 Desenvolvido por **Renan Cristian**  
 📚 Estudante de Análise e Desenvolvimento de Sistemas  
-🔗 [LinkedIn](www.linkedin.com/in/renan-cristian-moraes-de-oliveira-89761330a)
+🔗 [LinkedIn](https://www.linkedin.com/in/renan-cristian-moraes-de-oliveira-89761330a/)
 
 ## 📄 Licença
 
